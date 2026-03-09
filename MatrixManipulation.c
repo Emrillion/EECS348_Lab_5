@@ -20,3 +20,11 @@ int main() {
 
     return 0;
 }
+
+void addMatrices(int m1[SIZE][SIZE], int m2[SIZE][SIZE], int result[SIZE][SIZE]) {
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            result[i][j] = m1[i][j] + m2[i][j];
+        }
+    }
+}
