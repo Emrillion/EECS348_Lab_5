@@ -39,3 +39,20 @@ void multiplyMatrices(int m1[SIZE][SIZE], int m2[SIZE][SIZE], int result[SIZE][S
         }
     }
 }
+
+void transposeMatrix(int m[SIZE][SIZE], int result[SIZE][SIZE]) {
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            result[j][i] = m[i][j];
+        }
+    }
+}
+
+void printMatrix(int m[SIZE][SIZE]) {
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            printf("%d ", m[i][j]);
+        }
+        printf("\n");
+    }
+}
