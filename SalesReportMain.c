@@ -73,5 +73,27 @@ int main() {
         printf("%-12s- %-12s %10.2f\n", months[i], months[i + 5], movingAvg);
     }
 
+    // Calculate the sales report
+    printf("\nSales Report (Highest to Lowest):\n");
+    for (int i = 0; i < 12; i++) {
+        for (int j = i + 1; j < 12; j++) {
+            if (monthlySales[i] < monthlySales[j]) {
+                double tempSales = monthlySales[i];
+                monthlySales[i] = monthlySales[j];
+                monthlySales[j] = tempSales;
+
+                char *tempMonth = months[i];
+                months[i] = months[j];
+                months[j] = tempMonth;
+            }
+        }
+    }
+
+    // Print the sorted sales report
+    printf("%-12sSales\n", "Month");
+    for (int i = 0; i < 12; i++) {
+        printf("%-12s%.2f\n", months[i], monthlySales[i]);
+    }
+
     return 0;
 }
