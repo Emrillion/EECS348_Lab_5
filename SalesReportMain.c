@@ -56,10 +56,22 @@ int main() {
         avgSales += monthlySales[i];
     }
     avgSales /= 12;
+    // Print the sales summary
     printf("\nSales Summary Report:\n");
     printf("Minimum Sales: %.2f (%s)\n", minSales, months[minMonth]);
     printf("Maximum Sales: %.2f (%s)\n", maxSales, months[maxMonth]);
     printf("Average Sales: %.2f\n", avgSales);
+
+    // Calculate the six month moving average
+    printf("\nSix Month Moving Average:\n");
+    for (int i = 0; i <= 6; i++) {
+        double movingAvg = 0.0;
+        for (int j = i; j < i + 6; j++) {
+            movingAvg += monthlySales[j];
+        }
+        movingAvg /= 6;
+        printf("%-12s- %-12s %10.2f\n", months[i], months[i + 5], movingAvg);
+    }
 
     return 0;
 }
