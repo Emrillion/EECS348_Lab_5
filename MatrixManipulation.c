@@ -17,6 +17,19 @@ int main() {
         {5, 4, 3, 2, 1}
     };
 
+    // Example usage:
+    printf("Addition\n");
+    int result[SIZE][SIZE];
+    addMatrices(m1, m2, result);
+    printMatrix(result);
+
+    printf("\nMultiplication\n");
+    multiplyMatrices(m1, m2, result);
+    printMatrix(result);
+
+    printf("\nTranspose of m1\n");
+    transposeMatrix(m1, result);
+    printMatrix(result);
 
     return 0;
 }
